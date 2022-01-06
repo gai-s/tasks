@@ -1,0 +1,54 @@
+
+div[data-role="header"] h2{
+    margin: 0;
+    padding: 0;
+}
+div[data-role="header"] img{
+    max-width: 10em;
+}
+div[data-role="footer"]{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+li[data-role='list-divider']{
+    background-color: Lavender!important;
+}
+.hidden {
+    visibility: hidden;
+    display: none;   
+}
+
+#tasks_ul{
+    position: relative;
+    overflow: auto;
+    max-height: 30%!important;
+}
+.incomplete_task_item{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:center;
+}
+.msg_icons{
+    display: inline-block;
+    flex-grow:1;
+    flex-shrink: 2;
+    position:absolute;
+    top:20px;
+}
+.msg_icons img{
+    min-width:2em;
+}
+.item_data{
+    display: inline-block;
+    flex-grow:2;
+    flex-shrink: 1;
+    padding-left: 2%;
+    max-width: 80%;
+}
+.task_description{
+    display: flex;
+    word-wrap: break-word;
+    white-space: initial !important;
+}
+
