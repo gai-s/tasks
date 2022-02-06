@@ -76,7 +76,7 @@ function taskCompletion(){
     $("#popupBasic").popup("close");
     $('ul').prepend(`<img id='heyyy' style='width: 20%; position:fixed; z-index: 1; min-width: 12em' src="${icons_arr[cur_icon]}">`);
     cur_icon=(cur_icon+1<icons_arr.length)?cur_icon+1:0;
-    $("#heyyy").fadeIn(5500).animate({top: '10em',left: '10em', transform: 'rotate(20deg)'},400).fadeOut(500);
+    $("#heyyy").fadeIn(5500).animate({top: '10em',left: '10em', transform: 'rotate(20deg)'},500).fadeOut(500);
     pressed_task=-1;
 }
 
