@@ -44,7 +44,6 @@ li[data-role='list-divider']{
     flex-grow:2;
     flex-shrink: 1;
     padding-left: 2%;
-    padding-right: 2px;
     max-width: 80%;
 }
 .task_description{
@@ -52,4 +51,3 @@ li[data-role='list-divider']{
     word-wrap: break-word;
     white-space: initial !important;
 }
-
