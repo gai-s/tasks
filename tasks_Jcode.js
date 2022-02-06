@@ -1,6 +1,9 @@
 let tasks=[];
 var numberOfTasks=0;
 var pressed_task=-1;
+const icons_arr=["images/pokemon.png",'images/001.png','images/004.png','images/007.png','images/012.png','images/026ARaichu.png','images/131.png','images/312Minun.png','images/6255366cv23d.jpg','images/Dawn_Pachirisu.png','images/Full_Belly.png','images/Vaporeon.jpg'];
+var cur_icon=0;
+
 
 $(document).ready(function(){
     var local_storage_data=JSON.parse(localStorage.getItem("tasks"));
@@ -23,6 +26,8 @@ $(document).ready(function(){
     $("#new_day_btn").bind("click",clearTasks);
     $("#popupBasic button:nth-child(2)").bind("click", taskCompletion);
     $("#popupBasic button:nth-child(3)").bind("click", closePopUp);
+    $("#edditingPopup #updateEditting").bind("click", finishEditting);
+    $("#edditingPopup #cancelEditting").bind("click", cancelEditting);
     $("#new_assingment").keyup(function(event){
         if(event.which==13){
             console.log("key is up"+ event.keyCode);
@@ -69,7 +74,8 @@ function taskCompletion(){
     var completed_task=tasks[pressed_task-1]; //is it a cope or by reference?
     DisplayTask(completed_task,pressed_task);
     $("#popupBasic").popup("close");
-    $('ul').prepend("<img id='heyyy' style='width: 20%; position:fixed; z-index: 1; min-width: 12em' src='\pokemon.png'>");
+    $('ul').prepend(`<img id='heyyy' style='width: 20%; position:fixed; z-index: 1; min-width: 12em' src="${icons_arr[cur_icon]}">`);
+    cur_icon=(cur_icon+1<icons_arr.length)?cur_icon+1:0;
     $("#heyyy").fadeIn(5500).animate({top: '10em',left: '10em', transform: 'rotate(20deg)'},400).fadeOut(500);
     pressed_task=-1;
 }
@@ -105,10 +111,9 @@ function triggerPopup(index){
 
 function editMsg(index){
     console.log("editing...");
-    let description=$("#"+index + ` .task_description`).val();
-    $("#edditingPopup textarea").text(description);
+    let description=$("#"+index + ` .task_description`).text();
+    $("#edditingPopup textarea").val(description);
     pressed_task=index;
-    $("#edditingPopup button").on("click", finishEditting);
     //$(`#${index} .task_description`).html(`<textarea class='editting_box'>${description}</textarea> <button onclick='finishEditting(${index})'> ✔ </button>`);
     $("#edditingPopup").popup("open");
     //$('.msg_icons').addClass('hidden');
@@ -129,4 +134,9 @@ function finishEditting(){
     pressed_task=-1;
     $("#edditingPopup").popup("close");
     //$('.msg_icons').removeClass('hidden');
+}
+
+function cancelEditting(){
+    $("#edditingPopup").popup("close"); 
+    pressed_task=-1;
 }
