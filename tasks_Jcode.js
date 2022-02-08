@@ -22,6 +22,9 @@ $(document).ready(function(){
             }
         });
     }
+    var myElement = $('#tasks_ul');
+    var topPos = myElement.offsetTop;
+    $('.scrolling_div').scrollTop = topPos;
     $("#new_task_btn").bind("click",addNewTask);
     $("#new_day_btn").bind("click",clearTasks);
     $("#popupBasic button:nth-child(2)").bind("click", taskCompletion);
