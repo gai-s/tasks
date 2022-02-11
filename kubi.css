@@ -47,7 +47,7 @@ li[data-role='list-divider']{
     max-width: 80%;
 }
 li p{
-    padding-right: 2%;
+    margin-right: 2%;
 }
 .task_description{
     display: flex;
