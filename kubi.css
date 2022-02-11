@@ -43,8 +43,11 @@ li[data-role='list-divider']{
     display: inline-block;
     flex-grow:2;
     flex-shrink: 1;
-    padding-left: 2%;
+    padding-right: 2%;
     max-width: 80%;
+}
+li p{
+    padding-right: 2%;
 }
 .task_description{
     display: flex;
