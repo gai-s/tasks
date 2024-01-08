@@ -121,7 +121,7 @@ li p{
 @media only screen and (max-width: 600px) {
     .container{
         width: 100%;
-        min-height: 90vh;
+        min-height: 85vh;
     }
     .container:after{
         width: 100%;
