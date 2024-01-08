@@ -1,28 +1,80 @@
 
-div[data-role="header"] h2{
-    margin: 0;
+* {
+    box-sizing: border-box;
     padding: 0;
-}
-div[data-role="header"] img{
-    max-width: 10em;
-}
-div[data-role="footer"]{
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-}
-li[data-role='list-divider']{
-    background-color: Lavender!important;
+    margin: 0;
+    z-index: 1;
 }
 .hidden {
     visibility: hidden;
     display: none;   
 }
-
-#tasks_ul{
-    position: relative;
-    overflow: auto;
-    max-height: 30%!important;
+body {
+    min-height: 100vh;
+}
+div[data-role="page"]{
+    width: 100%;
+    height: auto;
+}
+div[data-role="page"]{
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgb(245, 232, 232);
+}
+.container{
+    width: 60%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.container:after {
+    content: ' ';
+    width: 60%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("https://gai-s.github.io/tasks/ash_thinking.jpg");
+    background-repeat: repeat;
+    background-position: 20% 50%;
+    background-size: contain;
+    z-index: 0;
+  }
+div[data-role="header"]{
+    margin: auto;
+    flex-grow: 0;
+    text-align: center; 
+    margin:0;
+}
+div[data-role="header"] h2{
+    margin: 0;
+    padding: 0;
+}
+div[data-role="header"] img{
+    max-width: 100px;
+    height: auto;
+    margin: 0;
+}
+div[data-role="footer"]{
+    padding-top: 2px;
+    flex-grow: 0;
+    justify-content: flex-end;
+}
+div[data-role="main"] {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    flex-grow:1;
+}
+li[data-role='list-divider']{
+    background-color: Lavender!important;
 }
 .incomplete_task_item{
     display: flex;
@@ -49,8 +101,28 @@ li[data-role='list-divider']{
 li p{
     margin-right: 2%;
 }
+#tasks_list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+#assingments-form {
+    justify-content: flex-end;
+    flex-grow: 0;
+}
+#tasks_ul {
+    margin: 0;
+}
 .task_description{
     display: flex;
     word-wrap: break-word;
     white-space: initial !important;
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 100%;
+    }
+    .container:after{
+        width: 100%;
+    }
 }

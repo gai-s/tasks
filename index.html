@@ -15,41 +15,44 @@
     </head>
     <body>
         <div data-role="page">
-            <div data-role="header" style="text-align:center; margin:0"><h2>Kubi - משימות </br> אז מה  עושים היום?</h2><span style="text-align: center; margin:0%"><img id="logo" style="width: 25%; height:25%; position:relative" src=".\ash_thinking.jpg"></span>
+            <div class="container">
+                <div data-role="header"><h2>Kubi - משימות </br> אז מה  עושים היום?</h2><img id="logo" src=".\ash_thinking.jpg">
+                </div>
+                <div data-role="main" class="ui-content">
+                    <div id="tasks_list">
+                        <div data-role="popup" data-overlay-theme="b" class="ui-btn-right" id="popupBasic" data-transition="slidedown">
+                            <p>האם משימה הושלמה?</p>
+                            <button>  בהחלט!  </button>
+                            <button>  לא ולא  </button>
+                        </div>
+                        <div data-role="popup" data-dismissible="false" data-overlay-theme="b" class="ui-btn-right" id="edditingPopup">
+                            <textarea class='editting_box'></textarea>
+                            <button id="updateEditting">✔ עכשיו יותר טוב</button>
+                            <button id="cancelEditting">X אה, לא משנה שישאר ככה</button>
+                        </div>
+                        <div>
+                            <ul id="tasks_ul" data-role='listview' style="display:block" dir="rtl">
+                                <li data-role='list-divider' id="uncompleted" style="text-align:center">משימות בתכנון שלי</li>
+                                <li data-role='list-divider' id="completed_tasks" style="text-align:center">הסתיימו!</li>
+                    
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="assingments-form">
+                        <form>
+                            <p>
+                            <!--<label for="new_assignment" style="color:gray; text-align:center" >הכנס משימה חדשה כאן...</label>-->
+                            </p>
+                            <textarea id="new_assingment" data-mini="true" placeholder="משימה חדשה לכאן..." style="text-align:center"></textarea>
+                        </form>
+                        <button id="new_task_btn">הוספת משימה חדשה</button>
+                        <button id="new_day_btn">יום חדש!! (למחוק את כל המשימות)</button>
+                    </div>
+                </div>   
+                <div data-role="footer">
+                    <div class="footer-msg">@האפליקציה של שלוי של נועם ושל שקודי<span style="text-align: center; margin:0%"><img id="logo" style="width: 4%; position:relative" src=".\hearts.png"></span></div>
+                </div>        
             </div>
-            <div role="main" class="ui-content">
-                <div id="tasks_list">
-                    <div data-role="popup" data-overlay-theme="b" class="ui-btn-right" id="popupBasic" data-transition="slidedown">
-                        <p>האם משימה הושלמה?</p>
-                        <button>  בהחלט!  </button>
-                        <button>  לא ולא  </button>
-                    </div>
-                    <div data-role="popup" data-dismissible="false" data-overlay-theme="b" class="ui-btn-right" id="edditingPopup">
-                        <textarea class='editting_box'></textarea>
-                        <button id="updateEditting">✔ עכשיו יותר טוב</button>
-                        <button id="cancelEditting">X אה, לא משנה שישאר ככה</button>
-                    </div>
-                    <div>
-                        <ul id="tasks_ul" data-role='listview' style="display:block" dir="rtl">
-                            <li data-role='list-divider' id="uncompleted" style="text-align:center">משימות בתכנון שלי</li>
-                            <li data-role='list-divider' id="completed_tasks" style="text-align:center">הסתיימו!</li>
-                   
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                <form>
-                    <p>
-                    <!--<label for="new_assignment" style="color:gray; text-align:center" >הכנס משימה חדשה כאן...</label>-->
-                    </p>
-                    <textarea id="new_assingment" data-mini="true" placeholder="משימה חדשה לכאן..." style="text-align:center"></textarea>
-                </form>
-                <button id="new_task_btn">הוספת משימה חדשה</button>
-                <button id="new_day_btn">יום חדש!! (למחוק את כל המשימות)</button>
-                </div>
-            
-            </div>           
-        <div data-role="footer">@האפליקציה של שלוי של נועם ושל שקודי<span style="text-align: center; margin:0%"><img id="logo" style="width: 4%; position:relative" src=".\hearts.png"></span></div>
         </div>
         <script src="tasks_Jcode.js"></script>
     </body>
